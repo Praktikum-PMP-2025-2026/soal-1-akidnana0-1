@@ -1,3 +1,11 @@
+/** EL2008 Praktikum Pemecahan Masalah dengan Pemrograman 2024/2025
+*   Modul                       : 01 – Data Manipulation and external files
+*   Hari dan Tanggal            : Senin, 20 April 2026
+*   Nama (NIM)                  : Aziiz Adityatama (13224070)
+*   Nama File                   : Soal1_Modul2.c
+*   Deskripsi                   : Memperbaiki array yang hilang
+*
+*/
 #include <stdio.h>
 
 void BubbleSort(int JumlahBilangan, int Bilangan[]){
