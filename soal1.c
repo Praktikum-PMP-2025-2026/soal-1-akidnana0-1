@@ -24,16 +24,12 @@ int main(){
         scanf("%d", &Array[i]);
     }
     for (int j = 0; j < N; j++){
-        // int value_left;
-        // int has_left = 1;
-        // int value_right;
-        // int has_right = 1;
-        if ((N == 1) && (Array[j] == -1)){
-            Array[j] = 0;
-        }
-        
-        else if (Array[j] == -1){
-            if ((Array[j-1] != -1) && (Array[j+1] != -1)){
+
+        if (Array[j] == -1){
+            if (N == 1){
+                Array[j] = 0;
+            }
+            else if ((Array[j-1] != -1) && (Array[j+1] != -1)){
                 Array[j] = ((Array[j-1] + Array[j+1])/2);
             }
             else if ((j == 0) && (Array[j+1] == -1)){
