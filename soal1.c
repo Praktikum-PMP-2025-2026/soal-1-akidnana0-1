@@ -28,7 +28,11 @@ int main(){
         // int has_left = 1;
         // int value_right;
         // int has_right = 1;
-        if (Array[j] == -1){
+        if ((N == 1) && (Array[j] == -1)){
+            Array[j] = 0;
+        }
+        
+        else if (Array[j] == -1){
             if ((Array[j-1] != -1) && (Array[j+1] != -1)){
                 Array[j] = ((Array[j-1] + Array[j+1])/2);
             }
