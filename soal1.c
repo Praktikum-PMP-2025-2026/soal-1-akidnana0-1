@@ -51,10 +51,13 @@ int main(){
 
         }
     }
-    printf("\n")
+    printf("\n");
     printf("RECOVERED ");
     for (int l = 0; l < N; l++){
-        printf("%d ", Array[l]);
+        printf("%d", Array[l]);
+        if (l != N-1){
+            printf(" ");
+        }
     }
 
     printf("\n");
