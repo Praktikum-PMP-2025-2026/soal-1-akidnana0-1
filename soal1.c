@@ -18,7 +18,7 @@ int main(){
     int MAX = 0;
     scanf("%d", &N);
     int Array[N];
-
+    
 
     for (int i = 0; i < N; i++){
         scanf("%d", &Array[i]);
@@ -32,9 +32,37 @@ int main(){
             if ((Array[j-1] != -1) && (Array[j+1] != -1)){
                 Array[j] = ((Array[j-1] + Array[j+1])/2);
             }
+            else if ((j == 0) && (Array[j+1] == -1)){
+                for (int k = 0; k < N; k++){
+                    if ((j+k+1) == (N - 1)){
+                        Array[j] = 0;
+                        break;
+                    }
+                    if ((Array[j+k+1] != -1) && ((j+k+1) != (N - 1))){
+                        Array[j] = Array[j+k+1];
+                        break;
+                    }
+                }
+            }
+            else if ((j == (N-1)) && (Array[j-1] == -1)){
+                for (int k = 0; k < N; k++){
+                    if ((j-k-1) == (0)){
+                        Array[j] = 0;
+                        break;
+                    }
+                    if ((Array[j-k-1] != -1) && (j-k-1) != (0)){
+                        Array[j] = Array[j-k-1];
+                        break;
+                    }
+                }
+            }
             else if ((Array[j-1] != -1) && (Array[j+1] == -1)){
                 for (int k = 0; k < N; k++){
-                    if (Array[j+k+1] != -1){
+                    if ((j+k+1) == (N - 1)){
+                        Array[j] = 0;
+                        break;
+                    }
+                    if ((Array[j+k+1] != -1) && ((j+k+1) != (N - 1))){
                         Array[j] = ((Array[j-1] + Array[j+k+1])/2);
                         break;
                     }
@@ -42,11 +70,19 @@ int main(){
             }
             else if((Array[j-1] == -1) && (Array[j+1] != -1)){
                 for (int k = 0; k < N; k++){
-                    if (Array[j-k-1] != -1){
-                        Array[j] = ((Array[j-k-1] + Array[j+1])/2);
+                    if (j-k-1 == 0){
+                        Array[j] = 0;
                         break;
                     }
+                    if ((Array[j-k-1] != -1) && (j-k-1 != 0)){
+                        Array[j] = ((Array[j-k-1] + Array[j+1])/2);
+                        break;
+
+                    }
                 }
+            }
+            else {
+                Array[j] = 0;
             }
 
         }
@@ -79,3 +115,4 @@ int main(){
 
     return 0;
 }
+
