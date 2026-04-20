@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 void BubbleSort(int JumlahBilangan, int Bilangan[]){
    for (int i = 0; i < JumlahBilangan-1; i++){
@@ -31,12 +30,12 @@ int main(){
         // int has_right = 1;
         if (Array[j] == -1){
             if ((Array[j-1] != -1) && (Array[j+1] != -1)){
-                Array[j] = floor(((double)Array[j-1] + (double)Array[j+1])/2);
+                Array[j] = (((double)Array[j-1] + (double)Array[j+1])/2);
             }
             else if ((Array[j-1] != -1) && (Array[j+1] == -1)){
                 for (int k = 0; k < N; k++){
                     if (Array[j+k+1] != -1){
-                        Array[j] = floor(((double)Array[j-1] + (double)Array[j+k+1])/2);
+                        Array[j] = (((double)Array[j-1] + (double)Array[j+k+1])/2);
                         break;
                     }
                 }
@@ -44,7 +43,7 @@ int main(){
             else if((Array[j-1] == -1) && (Array[j+1] != -1)){
                 for (int k = 0; k < N; k++){
                     if (Array[j-k-1] != -1){
-                        Array[j] = floor(((double)Array[j-k-1] + (double)Array[j+1])/2);
+                        Array[j] = (((double)Array[j-k-1] + (double)Array[j+1])/2);
                         break;
                     }
                 }
