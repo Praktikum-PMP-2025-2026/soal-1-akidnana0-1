@@ -23,14 +23,14 @@ int main(){
     for (int i = 0; i < N; i++){
         scanf("%d", &Array[i]);
     }
-    for (int j = 0; j < N; j++){
 
+    for (int j = 0; j < N; j++){
         if (Array[j] == -1){
             if (N == 1){
                 Array[j] = 0;
             }
             else if ((Array[j-1] != -1) && (Array[j+1] != -1)){
-                Array[j] = ((Array[j-1] + Array[j+1])/2);
+                Array[j] = ((Array[j-1] + Array[j+1])/2);               
             }
             else if ((j == 0) && (Array[j+1] == -1)){
                 for (int k = 0; k < N; k++){
@@ -38,7 +38,7 @@ int main(){
                         Array[j] = 0;
                         break;
                     }
-                    if ((Array[j+k+1] != -1) && ((j+k+1) != (N - 1))){
+                    else if ((Array[j+k+1] != -1) && ((j+k+1) <= (N - 1))){
                         Array[j] = Array[j+k+1];
                         break;
                     }
@@ -50,7 +50,7 @@ int main(){
                         Array[j] = 0;
                         break;
                     }
-                    if ((Array[j-k-1] != -1) && (j-k-1) != (0)){
+                    else if ((Array[j-k-1] != -1) && (j-k-1) >= (0)){
                         Array[j] = Array[j-k-1];
                         break;
                     }
@@ -62,7 +62,7 @@ int main(){
                         Array[j] = 0;
                         break;
                     }
-                    if ((Array[j+k+1] != -1) && ((j+k+1) != (N - 1))){
+                    if ((Array[j+k+1] != -1) && ((j+k+1) <= (N - 1))){
                         Array[j] = ((Array[j-1] + Array[j+k+1])/2);
                         break;
                     }
@@ -74,7 +74,7 @@ int main(){
                         Array[j] = 0;
                         break;
                     }
-                    if ((Array[j-k-1] != -1) && (j-k-1 != 0)){
+                    if ((Array[j-k-1] != -1) && (j-k-1 >= 0)){
                         Array[j] = ((Array[j-k-1] + Array[j+1])/2);
                         break;
 
@@ -112,7 +112,6 @@ int main(){
     }
 
     printf("MAX_SUM %d", MAX);
-
     return 0;
 }
 
